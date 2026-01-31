@@ -52,5 +52,5 @@ A console-based, app-like public safety system built using the **C programming l
    
 2.Run the applications:
 
-./user_app
+./user_app  
 ./government_app
