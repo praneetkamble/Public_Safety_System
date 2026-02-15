@@ -3,7 +3,7 @@
 #include <time.h>
 #include "shared.h"
 
-/* ---------- SCREEN ---------- */
+
 void clear_screen() {
 #ifdef _WIN32
     system("cls");
@@ -18,7 +18,7 @@ void pause_screen() {
     getchar();
 }
 
-/* ---------- ID GENERATION ---------- */
+
 int generate_case_id() {
     FILE *fp = fopen(CASE_DB, "rb");
     Case c;
@@ -32,7 +32,7 @@ int generate_case_id() {
     return id;
 }
 
-/* ---------- REPORT CASE ---------- */
+
 void report_case() {
     clear_screen();
 
@@ -41,7 +41,7 @@ void report_case() {
     c.created_time = time(NULL);
     c.status = REGISTERED;
 
-    /* VALIDATE TYPE */
+   
     do {
         printf("REPORT EMERGENCY / CIVIC ISSUE\n");
         printf("--------------------------------\n");
@@ -56,7 +56,7 @@ void report_case() {
     printf("Enter Location: ");
     scanf(" %[^\n]", c.location);
 
-    /* VALIDATE SEVERITY */
+  
     do {
         printf("Enter Severity (1–5): ");
         scanf("%d", &c.severity);
@@ -78,7 +78,7 @@ void report_case() {
     pause_screen();
 }
 
-/* ---------- CHECK STATUS ---------- */
+
 void check_status() {
     clear_screen();
 
@@ -116,7 +116,7 @@ void check_status() {
     pause_screen();
 }
 
-/* ---------- MAIN ---------- */
+
 int main() {
     int choice;
 
@@ -141,3 +141,4 @@ int main() {
         }
     }
 }
+
