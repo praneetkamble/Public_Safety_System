@@ -5,7 +5,7 @@
 
 #define CASE_DB "cases.db"
 
-/* ---------- CASE TYPES ---------- */
+
 typedef enum {
     MEDICAL = 1,
     POLICE,
@@ -15,7 +15,7 @@ typedef enum {
     COMPLAINT
 } CaseType;
 
-/* ---------- CASE STATUS ---------- */
+
 typedef enum {
     REGISTERED = 1,
     DISPATCHED,
@@ -24,17 +24,17 @@ typedef enum {
     CLOSED
 } CaseStatus;
 
-/* ---------- CASE STRUCT ---------- */
+
 typedef struct {
     int case_id;
     CaseType type;
     char location[50];
-    int severity;          // MUST be 1–5
+    int severity;          
     CaseStatus status;
     time_t created_time;
 } Case;
 
-/* ---------- ENUM → STRING ---------- */
+
 static inline const char* status_to_string(CaseStatus s) {
     switch (s) {
         case REGISTERED:  return "Registered";
@@ -59,3 +59,4 @@ static inline const char* type_to_string(CaseType t) {
 }
 
 #endif
+
