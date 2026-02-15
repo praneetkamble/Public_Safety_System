@@ -3,7 +3,6 @@
 #include <time.h>
 #include "shared.h"
 
-/* ---------- SCREEN ---------- */
 void clear_screen() {
 #ifdef _WIN32
     system("cls");
@@ -18,7 +17,7 @@ void pause_screen() {
     getchar();
 }
 
-/* ---------- VIEW CASES ---------- */
+
 void view_all_cases() {
     clear_screen();
 
@@ -47,7 +46,7 @@ void view_all_cases() {
     pause_screen();
 }
 
-/* ---------- UPDATE STATUS ---------- */
+
 void update_case_status() {
     clear_screen();
 
@@ -66,7 +65,7 @@ void update_case_status() {
         if (c.case_id == id) {
             printf("Current Status: %s\n", status_to_string(c.status));
 
-            /* VALIDATE STATUS */
+           
             do {
                 printf("New Status:\n");
                 printf("1.Registered 2.Dispatched 3.In Progress 4.Resolved 5.Closed\n");
@@ -91,7 +90,7 @@ void update_case_status() {
     pause_screen();
 }
 
-/* ---------- ANALYTICS ---------- */
+
 void generate_analytics() {
     clear_screen();
 
@@ -120,7 +119,7 @@ void generate_analytics() {
     pause_screen();
 }
 
-/* ---------- MAIN ---------- */
+
 int main() {
     int choice;
 
@@ -147,3 +146,4 @@ int main() {
         }
     }
 }
+
